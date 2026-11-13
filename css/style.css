@@ -1,0 +1,320 @@
+/* ==========================================================================
+   AGENCE DE LOCATION DE VOITURES — style.css
+   Palette : #0B0D0F (noir) · #171A1F (anthracite) · #FFFFFF · #F4F5F7
+             #D4A017 (or, accent avec parcimonie) · #6B7280 (texte secondaire)
+   Typo : "Montserrat" (titres) + "Inter" (texte)
+   ========================================================================== */
+
+:root{
+  --black:      #0B0D0F;
+  --anthracite: #171A1F;
+  --anthracite-2:#20242B;
+  --white:      #FFFFFF;
+  --grey-light: #F4F5F7;
+  --gold:       #D4A017;
+  --gold-soft:  #F4E4BC;
+  --text-sec:   #6B7280;
+  --text-dark:  #14161A;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+
+  --shadow-sm: 0 4px 16px rgba(0,0,0,.07);
+  --shadow-md: 0 14px 34px rgba(0,0,0,.14);
+  --shadow-lg: 0 28px 64px rgba(0,0,0,.22);
+  --shadow-gold: 0 10px 24px rgba(212,160,23,.35);
+
+  --ease: cubic-bezier(.22,.75,.32,1);
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{ font-family:'Inter',sans-serif; color:var(--text-dark); background:var(--white); overflow-x:hidden; }
+h1,h2,h3,h4,h5,.font-display{ font-family:'Montserrat',sans-serif; font-weight:800; color:var(--black); letter-spacing:-.01em; }
+p{ color:var(--text-sec); line-height:1.75; }
+a{ text-decoration:none; }
+img{ max-width:100%; display:block; }
+.container-xl{ max-width:1280px; }
+.section-pad{ padding-block:96px; }
+@media (max-width:767.98px){ .section-pad{ padding-block:60px; } }
+.bg-black{ background:var(--black) !important; }
+.bg-anthracite{ background:var(--anthracite) !important; }
+.bg-grey-light{ background:var(--grey-light) !important; }
+.text-gold{ color:var(--gold) !important; }
+
+.eyebrow{
+  display:inline-flex; align-items:center; gap:8px; font-family:'Montserrat'; font-weight:700;
+  font-size:.75rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold);
+  margin-bottom:14px;
+}
+.eyebrow::before{ content:""; width:26px; height:2px; background:var(--gold); }
+.section-title{ font-size:clamp(1.7rem,3vw,2.5rem); margin-bottom:14px; }
+.section-lead{ max-width:620px; }
+
+/* ============================================================= BUTTONS = */
+.btn-gold{
+  background:var(--gold); color:var(--black) !important; border:none; font-family:'Montserrat';
+  font-weight:700; border-radius:6px; padding:13px 28px; letter-spacing:.02em;
+  box-shadow:var(--shadow-gold); transition:.25s var(--ease);
+}
+.btn-gold:hover{ background:#c19312; color:var(--black); transform:translateY(-2px); box-shadow:0 16px 30px rgba(212,160,23,.45); }
+.btn-outline-dark-custom{
+  border:1.5px solid rgba(11,13,15,.25); color:var(--black); border-radius:6px; padding:13px 28px;
+  font-family:'Montserrat'; font-weight:700; transition:.25s var(--ease);
+}
+.btn-outline-dark-custom:hover{ background:var(--black); color:#fff; border-color:var(--black); }
+.btn-outline-light-custom{
+  border:1.5px solid rgba(255,255,255,.4); color:#fff; border-radius:6px; padding:13px 28px;
+  font-family:'Montserrat'; font-weight:700; transition:.25s var(--ease);
+}
+.btn-outline-light-custom:hover{ background:rgba(255,255,255,.12); color:#fff; border-color:#fff; }
+.btn-black{
+  background:var(--black); color:#fff !important; border:none; border-radius:6px; padding:13px 28px;
+  font-family:'Montserrat'; font-weight:700; transition:.25s var(--ease);
+}
+.btn-black:hover{ background:var(--anthracite); color:#fff; transform:translateY(-2px); }
+.btn-whatsapp{
+  background:#25D366; color:#fff !important; border:none; border-radius:6px; padding:13px 26px;
+  font-family:'Montserrat'; font-weight:700; display:inline-flex; align-items:center; gap:10px; transition:.25s var(--ease);
+}
+.btn-whatsapp:hover{ background:#1ebc59; color:#fff; transform:translateY(-2px); }
+.btn-sm-pill{ border-radius:100px; padding:8px 18px; font-size:.85rem; font-weight:600; font-family:'Montserrat'; }
+
+/* ============================================================== NAVBAR = */
+.navbar-main{ padding-block:20px; background:rgba(11,13,15,0); transition:.35s var(--ease); }
+.navbar-main.is-scrolled{ background:rgba(11,13,15,.97); padding-block:12px; box-shadow:var(--shadow-md); backdrop-filter:blur(8px); }
+.navbar-main .navbar-brand{ font-family:'Montserrat'; font-weight:800; color:#fff; display:flex; align-items:center; gap:10px; font-size:1.15rem; }
+.navbar-main .brand-mark{ width:40px; height:40px; border-radius:6px; background:var(--gold); display:flex; align-items:center; justify-content:center; color:var(--black); font-size:1.2rem; }
+.navbar-main .nav-link{ color:rgba(255,255,255,.82) !important; font-weight:500; font-size:.92rem; margin-inline:2px; padding:8px 12px !important; position:relative; }
+.navbar-main .nav-link::after{ content:""; position:absolute; left:12px; right:12px; bottom:2px; height:2px; background:var(--gold); transform:scaleX(0); transform-origin:left; transition:.25s var(--ease); }
+.navbar-main .nav-link:hover::after, .navbar-main .nav-link.active::after{ transform:scaleX(1); }
+.navbar-main .nav-link:hover{ color:#fff !important; }
+.navbar-phone{ color:#fff; font-weight:600; font-size:.92rem; display:flex; align-items:center; gap:8px; }
+.navbar-phone i{ color:var(--gold); }
+
+/* ================================================================ HERO = */
+.hero{
+  position:relative; min-height:92vh; display:flex; align-items:center; padding-top:120px; padding-bottom:200px;
+  background:linear-gradient(180deg, rgba(11,13,15,.82) 0%, rgba(11,13,15,.55) 45%, rgba(11,13,15,.92) 100%),
+             url('https://images.unsplash.com/photo-1764605206511-7a649d9df63b?auto=format&fit=crop&w=2000&q=80') center 65%/cover no-repeat;
+}
+.hero h1{ color:#fff; font-size:clamp(2rem,4.6vw,3.4rem); line-height:1.1; margin-bottom:18px; text-shadow:0 3px 24px rgba(0,0,0,.4); }
+.hero h1 .accent{ color:var(--gold); }
+.hero p.lead{ color:rgba(255,255,255,.85); font-size:1.1rem; max-width:560px; margin-bottom:30px; }
+
+/* ------------------------------------------------- Search / booking bar */
+.search-card{
+  background:#fff; border-radius:var(--radius-lg); box-shadow:var(--shadow-lg); padding:28px;
+  position:relative; margin-top:-140px; z-index:20;
+}
+.search-card h5{ margin-bottom:20px; }
+.search-card label{ font-family:'Montserrat'; font-weight:600; font-size:.78rem; color:var(--text-sec); text-transform:uppercase; letter-spacing:.04em; margin-bottom:6px; display:block; }
+.search-card .form-control, .search-card .form-select{
+  border-radius:8px; border:1.5px solid #E7E9ED; padding:11px 12px; font-size:.92rem;
+}
+.search-card .form-control:focus, .search-card .form-select:focus{ border-color:var(--gold); box-shadow:0 0 0 4px rgba(212,160,23,.15); }
+.search-card .btn-gold{ width:100%; padding:13px; }
+
+/* ============================================================ STATS === */
+.stats-strip{ background:var(--black); padding-top:220px; margin-top:-160px; position:relative; z-index:5; }
+.stat-item{ text-align:center; padding:36px 12px; border-right:1px solid rgba(255,255,255,.08); }
+.stat-item:last-child{ border-right:none; }
+.stat-item .num{ font-family:'Montserrat'; font-weight:800; font-size:clamp(1.8rem,3.6vw,2.6rem); color:var(--gold); line-height:1; }
+.stat-item .label{ color:rgba(255,255,255,.7); font-size:.86rem; margin-top:8px; }
+@media (max-width:767.98px){
+  .stat-item{ border-right:none; border-bottom:1px solid rgba(255,255,255,.08); }
+  .stats-strip{ padding-top:60px; margin-top:40px; }
+  .hero{ padding-bottom:80px; }
+  .search-card{ margin-top:24px; }
+}
+
+/* ===================================================== FILTERS ======== */
+.filter-bar{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:36px; }
+.filter-btn{
+  border:1.5px solid #E7E9ED; background:#fff; color:var(--text-dark); border-radius:100px;
+  padding:9px 20px; font-family:'Montserrat'; font-weight:600; font-size:.85rem; transition:.25s var(--ease);
+}
+.filter-btn:hover{ border-color:var(--gold); }
+.filter-btn.active{ background:var(--black); border-color:var(--black); color:#fff; }
+
+/* ===================================================== VEHICLE CARDS === */
+.vehicle-card{
+  border:1px solid #EEF0F3; border-radius:var(--radius-md); overflow:hidden; background:#fff;
+  box-shadow:var(--shadow-sm); transition:transform .35s var(--ease), box-shadow .35s var(--ease); height:100%;
+  display:flex; flex-direction:column;
+}
+.vehicle-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow-md); }
+.vehicle-card .img-wrap{ position:relative; height:200px; overflow:hidden; }
+.vehicle-card .img-wrap img{ width:100%; height:100%; object-fit:cover; transition:transform .6s var(--ease); }
+.vehicle-card:hover .img-wrap img{ transform:scale(1.07); }
+.vehicle-card .badge-tag{
+  position:absolute; top:14px; left:14px; background:var(--gold); color:var(--black); font-family:'Montserrat';
+  font-weight:700; font-size:.72rem; padding:5px 12px; border-radius:100px; text-transform:uppercase; letter-spacing:.03em;
+}
+.vehicle-card .badge-avail{
+  position:absolute; top:14px; right:14px; background:rgba(255,255,255,.92); color:#1E8E4F; font-weight:700;
+  font-size:.72rem; padding:5px 12px; border-radius:100px; display:flex; align-items:center; gap:5px;
+}
+.vehicle-card .badge-avail::before{ content:""; width:6px; height:6px; border-radius:50%; background:#1E8E4F; }
+.vehicle-card .body{ padding:20px; display:flex; flex-direction:column; flex:1; }
+.vehicle-card .cat{ font-size:.78rem; color:var(--gold); font-weight:700; font-family:'Montserrat'; text-transform:uppercase; letter-spacing:.04em; margin-bottom:4px; }
+.vehicle-card h5{ margin-bottom:10px; font-size:1.15rem; }
+.vehicle-specs{ display:flex; flex-wrap:wrap; gap:10px 16px; margin-bottom:16px; }
+.vehicle-specs span{ font-size:.8rem; color:var(--text-sec); display:flex; align-items:center; gap:5px; }
+.vehicle-specs i{ color:var(--gold); }
+.vehicle-card .price-row{ margin-top:auto; display:flex; align-items:end; justify-content:space-between; padding-top:12px; border-top:1px dashed #E7E9ED; }
+.vehicle-card .price{ font-family:'Montserrat'; font-weight:800; font-size:1.2rem; color:var(--black); }
+.vehicle-card .price small{ font-size:.72rem; font-weight:600; color:var(--text-sec); }
+.vehicle-card .cta-row{ display:flex; gap:8px; margin-top:14px; }
+.vehicle-card .cta-row .btn{ flex:1; font-size:.82rem; padding:9px 10px; }
+
+/* ============================================================= MODAL === */
+.modal-vehicle .modal-content{ border-radius:var(--radius-lg); border:none; overflow:hidden; }
+.modal-vehicle .modal-header{ border-bottom:1px solid #EEF0F3; padding:20px 26px; }
+.modal-vehicle .modal-body{ padding:0; }
+.vd-gallery-main{ height:340px; overflow:hidden; border-radius:0; }
+.vd-gallery-main img{ width:100%; height:100%; object-fit:cover; }
+.vd-thumbs{ display:flex; gap:8px; padding:12px; overflow-x:auto; }
+.vd-thumbs img{ width:74px; height:56px; object-fit:cover; border-radius:6px; cursor:pointer; opacity:.6; transition:.2s; flex-shrink:0; border:2px solid transparent; }
+.vd-thumbs img:hover, .vd-thumbs img.active{ opacity:1; border-color:var(--gold); }
+.vd-info{ padding:26px; }
+.vd-spec-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin:20px 0; }
+.vd-spec-item{ display:flex; align-items:center; gap:10px; font-size:.88rem; }
+.vd-spec-item i{ width:36px; height:36px; border-radius:8px; background:var(--grey-light); color:var(--gold); display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0; }
+.vd-price-box{ background:var(--grey-light); border-radius:var(--radius-md); padding:18px 20px; margin:20px 0; }
+.vd-sticky-cta{ position:sticky; bottom:0; background:#fff; padding:16px 26px; border-top:1px solid #EEF0F3; display:flex; gap:10px; }
+
+/* ============================================================ PRICING = */
+.price-plan{ border-radius:var(--radius-lg); padding:38px 30px; height:100%; border:1px solid #EEF0F3; background:#fff; box-shadow:var(--shadow-sm); transition:.3s var(--ease); }
+.price-plan:hover{ transform:translateY(-6px); box-shadow:var(--shadow-md); }
+.price-plan.featured{ background:var(--black); color:#fff; }
+.price-plan.featured p{ color:rgba(255,255,255,.65); }
+.price-plan .amount{ font-family:'Montserrat'; font-weight:800; font-size:1.7rem; margin:14px 0; }
+.price-plan .amount small{ font-size:.85rem; font-weight:500; opacity:.7; }
+
+/* ============================================================ CHAUFFEUR */
+.choice-card{ border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm); height:100%; border:1px solid #EEF0F3; }
+.choice-card .img-top{ height:200px; overflow:hidden; }
+.choice-card .img-top img{ width:100%; height:100%; object-fit:cover; }
+.choice-card .body{ padding:28px; }
+.choice-card ul{ list-style:none; padding:0; margin:18px 0; }
+.choice-card ul li{ display:flex; gap:10px; align-items:flex-start; margin-bottom:10px; font-size:.9rem; color:var(--text-sec); }
+.choice-card ul li i{ color:var(--gold); margin-top:3px; }
+
+/* ============================================================ AIRPORT = */
+.airport-section{ position:relative; border-radius:var(--radius-lg); overflow:hidden; min-height:420px; display:flex; align-items:center; }
+.airport-section .bg-img{ position:absolute; inset:0; }
+.airport-section .bg-img img{ width:100%; height:100%; object-fit:cover; }
+.airport-section .overlay{ position:absolute; inset:0; background:linear-gradient(90deg, rgba(11,13,15,.92) 30%, rgba(11,13,15,.35) 100%); }
+.airport-section .content{ position:relative; padding:52px; max-width:560px; }
+.airport-section .content h2{ color:#fff; }
+.airport-section .content p{ color:rgba(255,255,255,.8); }
+.airport-list{ list-style:none; padding:0; margin:22px 0; }
+.airport-list li{ display:flex; gap:10px; align-items:center; color:rgba(255,255,255,.88); font-size:.92rem; margin-bottom:10px; }
+.airport-list li i{ color:var(--gold); }
+
+/* ============================================================ WHY US == */
+.why-item{ display:flex; gap:18px; padding:20px 0; }
+.why-item .icon{ width:54px; height:54px; border-radius:12px; background:var(--grey-light); color:var(--gold); display:flex; align-items:center; justify-content:center; font-size:1.35rem; flex-shrink:0; }
+
+/* ============================================================ REVIEWS = */
+.review-card{ background:#fff; border-radius:var(--radius-md); padding:30px; box-shadow:var(--shadow-sm); height:100%; }
+.review-card .stars i{ color:var(--gold); font-size:.88rem; }
+.review-card .avatar{ width:44px; height:44px; border-radius:50%; background:var(--grey-light); color:var(--black); display:flex; align-items:center; justify-content:center; font-family:'Montserrat'; font-weight:700; font-size:.85rem; }
+#reviewCarousel .carousel-control-prev, #reviewCarousel .carousel-control-next{ width:44px; height:44px; top:50%; transform:translateY(-50%); background:var(--black); border-radius:50%; opacity:.85; }
+#reviewCarousel .carousel-control-prev{ left:-10px; } #reviewCarousel .carousel-control-next{ right:-10px; }
+@media (max-width:767.98px){ #reviewCarousel .carousel-control-prev, #reviewCarousel .carousel-control-next{ display:none; } }
+
+/* ============================================================ GALLERY = */
+.gallery-item{ position:relative; overflow:hidden; border-radius:var(--radius-md); cursor:pointer; }
+.gallery-item img{ width:100%; height:100%; object-fit:cover; transition:transform .6s var(--ease); }
+.gallery-item:hover img{ transform:scale(1.1); }
+.gallery-item .overlay{ position:absolute; inset:0; background:linear-gradient(180deg, transparent 40%, rgba(11,13,15,.85) 100%); opacity:0; transition:.3s var(--ease); display:flex; align-items:flex-end; padding:16px; color:#fff; font-weight:600; font-size:.88rem; }
+.gallery-item:hover .overlay{ opacity:1; }
+
+/* ============================================================ FAQ ===== */
+.accordion-item{ border:none; border-radius:var(--radius-sm) !important; overflow:hidden; margin-bottom:12px; box-shadow:var(--shadow-sm); }
+.accordion-button{ font-family:'Montserrat'; font-weight:700; color:var(--black); font-size:.96rem; padding:18px 22px; }
+.accordion-button:not(.collapsed){ background:var(--grey-light); color:var(--black); box-shadow:none; }
+.accordion-button:focus{ box-shadow:none; }
+
+/* ============================================================ CONTACT = */
+.contact-info-item{ display:flex; gap:16px; align-items:flex-start; margin-bottom:22px; }
+.contact-info-item .icon{ width:46px; height:46px; border-radius:10px; background:var(--gold); color:var(--black); display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
+.map-wrap{ border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); min-height:360px; }
+.map-wrap iframe{ width:100%; height:100%; min-height:360px; border:0; }
+.form-card{ background:#fff; border-radius:var(--radius-lg); box-shadow:var(--shadow-lg); padding:40px; }
+.form-control, .form-select{ border-radius:8px; border:1.5px solid #E7E9ED; padding:11px 14px; font-size:.92rem; }
+.form-control:focus, .form-select:focus{ border-color:var(--gold); box-shadow:0 0 0 4px rgba(212,160,23,.15); }
+label.form-label{ font-weight:600; font-size:.85rem; color:var(--black); margin-bottom:6px; font-family:'Montserrat'; }
+.confirm-banner{ border-radius:var(--radius-md); background:#E7F7EE; border:1px solid #b7ecce; color:#1E8E4F; padding:16px 20px; display:none; align-items:center; gap:12px; font-weight:500; }
+.confirm-banner.show{ display:flex; }
+.invalid-msg{ color:#dc3545; font-size:.8rem; margin-top:4px; display:none; }
+.was-validated-custom .invalid-msg.show{ display:block; }
+.was-validated-custom .form-control.is-invalid, .was-validated-custom .form-select.is-invalid{ border-color:#dc3545; }
+
+/* ============================================================ RESERVATION STEPPER */
+.res-steps{ display:flex; justify-content:space-between; margin-bottom:44px; position:relative; }
+.res-steps::before{ content:""; position:absolute; top:18px; left:5%; right:5%; height:2px; background:#E7E9ED; z-index:0; }
+.res-step{ position:relative; z-index:1; text-align:center; flex:1; }
+.res-step .circle{ width:38px; height:38px; border-radius:50%; background:#fff; border:2px solid #E7E9ED; color:var(--text-sec); display:flex; align-items:center; justify-content:center; margin:0 auto 8px; font-family:'Montserrat'; font-weight:700; transition:.3s var(--ease); }
+.res-step.active .circle{ border-color:var(--gold); background:var(--gold); color:var(--black); }
+.res-step.done .circle{ border-color:var(--black); background:var(--black); color:#fff; }
+.res-step .label{ font-size:.78rem; color:var(--text-sec); font-weight:600; }
+.res-step.active .label{ color:var(--black); }
+.res-panel{ display:none; }
+.res-panel.active{ display:block; }
+.res-summary-card{ background:var(--black); color:#fff; border-radius:var(--radius-lg); padding:28px; position:sticky; top:110px; }
+.res-summary-card h6{ color:#fff; }
+.res-summary-card .row-line{ display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid rgba(255,255,255,.1); font-size:.9rem; }
+.res-summary-card .total{ font-family:'Montserrat'; font-weight:800; font-size:1.6rem; color:var(--gold); margin-top:14px; }
+.res-vehicle-pick{ border:1.5px solid #E7E9ED; border-radius:var(--radius-md); padding:14px; display:flex; gap:14px; align-items:center; cursor:pointer; transition:.25s var(--ease); margin-bottom:12px; }
+.res-vehicle-pick:hover{ border-color:var(--gold); }
+.res-vehicle-pick.selected{ border-color:var(--gold); background:#FFFBF0; }
+.res-vehicle-pick img{ width:90px; height:64px; object-fit:cover; border-radius:8px; flex-shrink:0; }
+
+/* ============================================================ FOOTER == */
+footer.site-footer{ background:var(--black); color:rgba(255,255,255,.7); padding-top:70px; }
+footer.site-footer h6{ color:#fff; font-family:'Montserrat'; font-weight:700; margin-bottom:20px; }
+footer.site-footer a{ color:rgba(255,255,255,.62); }
+footer.site-footer a:hover{ color:var(--gold); }
+footer.site-footer .brand{ display:flex; align-items:center; gap:10px; color:#fff; font-family:'Montserrat'; font-weight:800; font-size:1.2rem; margin-bottom:14px; }
+.footer-social a{ width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,.07); display:inline-flex; align-items:center; justify-content:center; margin-right:8px; transition:.25s var(--ease); }
+.footer-social a:hover{ background:var(--gold); color:var(--black); }
+.footer-bottom{ border-top:1px solid rgba(255,255,255,.1); margin-top:50px; padding:20px 0; font-size:.83rem; }
+
+/* ============================================================ WHATSAPP = */
+.whatsapp-float{ position:fixed; bottom:24px; right:24px; z-index:1050; width:60px; height:60px; border-radius:50%; background:#25D366; color:#fff; display:flex; align-items:center; justify-content:center; font-size:1.6rem; box-shadow:0 10px 26px rgba(37,211,102,.5); animation:wa-pulse 2.6s ease-in-out infinite; }
+.whatsapp-float:hover{ color:#fff; }
+@keyframes wa-pulse{ 0%,100%{ box-shadow:0 10px 26px rgba(37,211,102,.5);} 50%{ box-shadow:0 10px 26px rgba(37,211,102,.5), 0 0 0 12px rgba(37,211,102,.15);} }
+
+/* ============================================================ LIGHTBOX = */
+.lightbox-overlay{ position:fixed; inset:0; background:rgba(11,13,15,.95); z-index:1080; display:none; align-items:center; justify-content:center; padding:24px; }
+.lightbox-overlay.active{ display:flex; }
+.lightbox-overlay img{ max-width:min(900px,92vw); max-height:86vh; border-radius:10px; box-shadow:var(--shadow-lg); }
+.lightbox-close{ position:absolute; top:24px; right:28px; color:#fff; font-size:1.7rem; cursor:pointer; width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,.1); display:flex; align-items:center; justify-content:center; }
+
+/* ============================================================ PAGE HERO (inner pages) */
+.page-hero{ background:var(--black); padding:150px 0 60px; }
+.page-hero h1{ color:#fff; font-size:clamp(1.8rem,3.4vw,2.6rem); }
+.page-hero .breadcrumb-custom{ color:rgba(255,255,255,.55); font-size:.9rem; }
+.page-hero .breadcrumb-custom a{ color:rgba(255,255,255,.8); }
+.page-hero .breadcrumb-custom a:hover{ color:var(--gold); }
+
+/* ============================================================ REVEAL == */
+.reveal{ opacity:0; transform:translateY(26px); transition:opacity .7s var(--ease), transform .7s var(--ease); }
+.reveal.in{ opacity:1; transform:translateY(0); }
+@media (prefers-reduced-motion:reduce){ *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; } html{ scroll-behavior:auto; } }
+
+/* ============================================================ RESPONSIVE */
+@media (max-width:991.98px){ .vd-spec-grid{ grid-template-columns:1fr 1fr; } .res-summary-card{ position:static; margin-top:24px; } }
+@media (max-width:767.98px){
+  .btn-gold,.btn-outline-dark-custom,.btn-outline-light-custom,.btn-black,.btn-whatsapp{ width:100%; justify-content:center; }
+  .hero .d-flex.gap-3{ flex-direction:column; }
+  .whatsapp-float{ width:54px; height:54px; font-size:1.4rem; bottom:16px; right:16px; }
+  .form-card{ padding:24px; }
+  .airport-section .content{ padding:30px; max-width:100%; }
+  .res-steps .label{ display:none; }
+  .vehicle-card .cta-row{ flex-direction:column; }
+}

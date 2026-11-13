@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Location de voitures à Lomé | [NOM DE L'AGENCE]</title>
+<meta name="description" content="Location de voitures à Lomé et partout au Togo. Berlines, SUV, véhicules premium, avec ou sans chauffeur. Réservation rapide via WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Location de voitures à Lomé | [NOM DE L'AGENCE]">
+<meta property="og:description" content="Des véhicules fiables, confortables et adaptés à vos déplacements à Lomé et partout au Togo.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1764605206511-7a649d9df63b?auto=format&fit=crop&w=1200&q=80">
+<meta property="og:locale" content="fr_TG">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230B0D0F%22/><text x=%2250%22 y=%2265%22 font-size=%2250%22 fill=%22%23D4A017%22 text-anchor=%22middle%22>🚗</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRental",
+  "name": "[NOM DE L'AGENCE]",
+  "image": "https://images.unsplash.com/photo-1764605206511-7a649d9df63b",
+  "telephone": "+228 XX XX XX XX",
+  "address": { "@type": "PostalAddress", "addressLocality": "Lomé", "addressCountry": "TG" },
+  "openingHours": "Mo-Sa 07:00-20:00, Su 08:00-16:00",
+  "priceRange": "FCFA"
+}
+</script>
+</head>
+<body>
+
+<!-- ============================================================ NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-main" id="mainNavbar">
+  <div class="container container-xl">
+    <a class="navbar-brand" href="index.html">
+      <span class="brand-mark"><i class="bi bi-car-front-fill"></i></span>
+      <span data-agency-name>[NOM DE L'AGENCE]</span>
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-label="Ouvrir le menu">
+      <i class="bi bi-list text-white fs-1"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav mx-auto my-3 my-lg-0 gap-lg-1">
+        <li class="nav-item"><a class="nav-link active" href="index.html#accueil">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link" href="vehicules.html">Nos véhicules</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#pourquoi">Pourquoi nous</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#tarifs">Tarifs</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <div class="d-flex flex-column flex-lg-row gap-2 align-items-lg-center">
+        <span class="navbar-phone"><i class="bi bi-telephone-fill"></i> <span data-agency-phone>+228 XX XX XX XX</span></span>
+        <a href="reservation.html" class="btn-gold btn-sm-pill text-center">Réserver</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================== HERO -->
+<header class="hero" id="accueil">
+  <div class="container container-xl">
+    <div class="row">
+      <div class="col-lg-7 reveal">
+        <span class="eyebrow">Location de véhicules à Lomé</span>
+        <h1>LOUEZ LA VOITURE QUI VOUS <span class="accent">CORRESPOND</span></h1>
+        <p class="lead">Des véhicules fiables, confortables et adaptés à vos déplacements à Lomé et partout au Togo.</p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="vehicules.html" class="btn-outline-light-custom"><i class="bi bi-grid-fill me-2"></i>Voir nos véhicules</a>
+          <a href="reservation.html" class="btn-gold"><i class="bi bi-calendar-check-fill me-2"></i>Réserver maintenant</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================================================== SEARCH CARD -->
+  <div class="container container-xl">
+    <div class="search-card reveal">
+      <h5><i class="bi bi-search text-gold me-2"></i>Trouvez votre véhicule</h5>
+      <form id="searchForm" class="row g-3 align-items-end" onsubmit="event.preventDefault(); window.location.href='vehicules.html';">
+        <div class="col-md-3 col-6">
+          <label>Lieu de prise en charge</label>
+          <select class="form-select">
+            <option>Lomé</option>
+            <option>Aéroport de Lomé</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="col-md-2 col-6">
+          <label>Date de départ</label>
+          <input type="date" class="form-control">
+        </div>
+        <div class="col-md-2 col-6">
+          <label>Heure</label>
+          <input type="time" class="form-control" value="09:00">
+        </div>
+        <div class="col-md-2 col-6">
+          <label>Date de retour</label>
+          <input type="date" class="form-control">
+        </div>
+        <div class="col-md-1 col-6">
+          <label>Heure</label>
+          <input type="time" class="form-control" value="09:00">
+        </div>
+        <div class="col-md-2 col-6">
+          <label>Catégorie</label>
+          <select class="form-select">
+            <option>Toutes</option>
+            <option>Économique</option>
+            <option>Berline</option>
+            <option>SUV</option>
+            <option>Premium</option>
+            <option>Familiale</option>
+          </select>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn-gold"><i class="bi bi-search me-2"></i>Rechercher un véhicule</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================ CHIFFRES -->
+<section class="stats-strip">
+  <div class="container container-xl">
+    <div class="row g-0 text-center">
+      <div class="col-6 col-lg-3 stat-item reveal"><div class="num"><span data-counter="50" data-suffix="+">0</span></div><div class="label">Véhicules</div></div>
+      <div class="col-6 col-lg-3 stat-item reveal"><div class="num"><span data-counter="2000" data-suffix="+">0</span></div><div class="label">Clients satisfaits</div></div>
+      <div class="col-6 col-lg-3 stat-item reveal"><div class="num"><span data-counter="5" data-suffix="+">0</span></div><div class="label">Années d'expérience</div></div>
+      <div class="col-6 col-lg-3 stat-item reveal"><div class="num"><span data-counter="24/7">24/7</span></div><div class="label">Assistance</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================== NOS VÉHICULES ====== -->
+<section class="section-pad" id="vehicules">
+  <div class="container container-xl">
+    <div class="d-flex flex-wrap justify-content-between align-items-end mb-5 gap-3 reveal">
+      <div>
+        <span class="eyebrow">Notre flotte</span>
+        <h2 class="section-title mb-1">Choisissez le véhicule adapté à votre besoin</h2>
+        <p class="section-lead mb-0">Un aperçu de notre flotte — retrouvez tous nos véhicules et leurs disponibilités sur la page dédiée.</p>
+      </div>
+      <a href="vehicules.html" class="btn-outline-dark-custom text-nowrap">Voir toute la flotte</a>
+    </div>
+    <div class="row g-4" id="vehiclesPreview"></div>
+  </div>
+</section>
+
+<!-- ================================================== CHAUFFEUR ========== -->
+<section class="section-pad bg-grey-light" id="services">
+  <div class="container container-xl">
+    <div class="text-center mx-auto mb-5 reveal" style="max-width:640px">
+      <span class="eyebrow justify-content-center">Nos services</span>
+      <h2 class="section-title">Votre trajet, votre choix</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-6 reveal">
+        <div class="choice-card bg-white">
+          <div class="img-top"><img src="https://images.unsplash.com/photo-1690278289651-895463644114?auto=format&fit=crop&w=900&q=80" alt="Voiture de location sans chauffeur"></div>
+          <div class="body">
+            <h5><i class="bi bi-steering-wheel text-gold me-2"></i>Sans chauffeur</h5>
+            <p class="mb-0">Pour ceux qui souhaitent conduire eux-mêmes.</p>
+            <ul>
+              <li><i class="bi bi-check-circle-fill"></i> Liberté de déplacement</li>
+              <li><i class="bi bi-check-circle-fill"></i> Plusieurs catégories de véhicules</li>
+              <li><i class="bi bi-check-circle-fill"></i> Tarifs flexibles</li>
+            </ul>
+            <a href="vehicules.html" class="btn-black">Voir les véhicules</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 reveal">
+        <div class="choice-card bg-white">
+          <div class="img-top"><img src="https://images.unsplash.com/photo-1570733577524-3a047079e80d?auto=format&fit=crop&w=900&q=80" alt="Location de voiture avec chauffeur professionnel"></div>
+          <div class="body">
+            <h5><i class="bi bi-person-badge-fill text-gold me-2"></i>Avec chauffeur</h5>
+            <p class="mb-0">Pour les déplacements professionnels, événements, transferts et longues distances.</p>
+            <ul>
+              <li><i class="bi bi-check-circle-fill"></i> Chauffeurs expérimentés</li>
+              <li><i class="bi bi-check-circle-fill"></i> Confort</li>
+              <li><i class="bi bi-check-circle-fill"></i> Ponctualité et service personnalisé</li>
+            </ul>
+            <a href="#" data-whatsapp-default class="btn-gold">Demander un devis</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================== TRANSFERT AÉROPORT = -->
+<section class="section-pad">
+  <div class="container container-xl">
+    <div class="airport-section reveal">
+      <div class="bg-img"><img src="https://images.unsplash.com/photo-1663852397535-18292e115327?auto=format&fit=crop&w=1600&q=80" alt="Véhicule pour transfert à l'aéroport de Lomé"></div>
+      <div class="overlay"></div>
+      <div class="content">
+        <span class="eyebrow">Service dédié</span>
+        <h2>Transfert Aéroport de Lomé</h2>
+        <p>Un chauffeur vous attend à votre arrivée et vous accompagne jusqu'à votre destination en toute tranquillité.</p>
+        <ul class="airport-list">
+          <li><i class="bi bi-check-circle-fill"></i> Accueil à l'aéroport</li>
+          <li><i class="bi bi-check-circle-fill"></i> Suivi de vol</li>
+          <li><i class="bi bi-check-circle-fill"></i> Chauffeur professionnel</li>
+          <li><i class="bi bi-check-circle-fill"></i> Véhicules climatisés</li>
+          <li><i class="bi bi-check-circle-fill"></i> Service disponible 7j/7</li>
+        </ul>
+        <a href="#" data-whatsapp-default class="btn-gold">Réserver un transfert</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================== POURQUOI NOUS ====== -->
+<section class="section-pad bg-grey-light" id="pourquoi">
+  <div class="container container-xl">
+    <div class="text-center mx-auto mb-5 reveal" style="max-width:640px">
+      <span class="eyebrow justify-content-center">Nos engagements</span>
+      <h2 class="section-title">Pourquoi choisir notre agence ?</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="why-item"><div class="icon"><i class="bi bi-shield-check"></i></div><div><h6 class="mb-1">Véhicules fiables</h6><p class="small mb-0">Des véhicules régulièrement entretenus.</p></div></div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="why-item"><div class="icon"><i class="bi bi-cash-coin"></i></div><div><h6 class="mb-1">Tarifs transparents</h6><p class="small mb-0">Aucun prix caché.</p></div></div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="why-item"><div class="icon"><i class="bi bi-phone"></i></div><div><h6 class="mb-1">Réservation rapide</h6><p class="small mb-0">Réservez directement depuis votre téléphone.</p></div></div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="why-item"><div class="icon"><i class="bi bi-clock-history"></i></div><div><h6 class="mb-1">Service flexible</h6><p class="small mb-0">Des solutions adaptées à votre planning.</p></div></div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="why-item"><div class="icon"><i class="bi bi-person-badge"></i></div><div><h6 class="mb-1">Chauffeurs professionnels</h6><p class="small mb-0">Pour vos déplacements avec chauffeur.</p></div></div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="why-item"><div class="icon"><i class="bi bi-geo-alt"></i></div><div><h6 class="mb-1">Service à Lomé</h6><p class="small mb-0">Prise en charge dans plusieurs zones.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================== TARIFS ============== -->
+<section class="section-pad" id="tarifs">
+  <div class="container container-xl">
+    <div class="text-center mx-auto mb-5 reveal" style="max-width:640px">
+      <span class="eyebrow justify-content-center">Tarification</span>
+      <h2 class="section-title">Des tarifs transparents</h2>
+      <p class="section-lead mx-auto">Les montants ci-dessous sont indicatifs et varient selon le véhicule choisi.</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="price-plan h-100">
+          <h5>Location à la journée</h5>
+          <p class="mb-0 small">Idéale pour un besoin ponctuel</p>
+          <div class="amount">À partir de 22 000 <small>FCFA / jour</small></div>
+          <a href="vehicules.html" class="btn-black w-100 text-center d-block">Voir les véhicules</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="price-plan featured h-100">
+          <h5 class="text-white">Location à la semaine</h5>
+          <p class="mb-0 small">Le meilleur rapport confort / prix</p>
+          <div class="amount text-white">À partir de 135 000 <small>FCFA / semaine</small></div>
+          <a href="vehicules.html" class="btn-gold w-100 text-center d-block">Voir les véhicules</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="price-plan h-100">
+          <h5>Location longue durée</h5>
+          <p class="mb-0 small">Pour les entreprises et les longs séjours</p>
+          <div class="amount">Tarif personnalisé</div>
+          <a href="#" data-whatsapp-default class="btn-black w-100 text-center d-block">Demander un devis</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================== AVIS CLIENTS ======== -->
+<section class="section-pad bg-grey-light">
+  <div class="container container-xl">
+    <div class="text-center mx-auto mb-5 reveal" style="max-width:640px">
+      <span class="eyebrow justify-content-center">Témoignages</span>
+      <h2 class="section-title">Ce que nos clients pensent de nous</h2>
+    </div>
+    <div id="reviewCarousel" class="carousel slide reveal" data-bs-ride="carousel" data-bs-interval="6000">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="review-card">
+                <div class="stars mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                <p class="mb-4">« Service rapide, véhicule propre et très bon accueil. Je recommande. »</p>
+                <div class="d-flex align-items-center gap-2"><div class="avatar">A.K.</div><div class="fw-semibold small">Ayi K.</div></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="review-card">
+                <div class="stars mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                <p class="mb-4">« Réservation faite en 5 minutes sur WhatsApp, voiture disponible à l'heure convenue. »</p>
+                <div class="d-flex align-items-center gap-2"><div class="avatar">M.T.</div><div class="fw-semibold small">Mawuli T.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="review-card">
+                <div class="stars mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                <p class="mb-4">« Le chauffeur était ponctuel et très professionnel pour notre transfert aéroport. »</p>
+                <div class="d-flex align-items-center gap-2"><div class="avatar">E.A.</div><div class="fw-semibold small">Essi A.</div></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="review-card">
+                <div class="stars mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                <p class="mb-4">« Tarifs clairs annoncés dès le départ, aucune mauvaise surprise à la restitution. »</p>
+                <div class="d-flex align-items-center gap-2"><div class="avatar">K.D.</div><div class="fw-semibold small">Kossi D.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+      <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================== GALERIE ============= -->
+<section class="section-pad">
+  <div class="container container-xl">
+    <div class="text-center mx-auto mb-5 reveal" style="max-width:640px">
+      <span class="eyebrow justify-content-center">Galerie</span>
+      <h2 class="section-title">Notre agence en images</h2>
+    </div>
+    <div class="row g-3">
+      <div class="col-6 col-lg-4 reveal" style="height:260px"><div class="gallery-item h-100"><img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=700&q=80" alt="SUV de la flotte"><div class="overlay">Notre flotte SUV</div></div></div>
+      <div class="col-6 col-lg-4 reveal" style="height:260px"><div class="gallery-item h-100"><img src="https://images.unsplash.com/photo-1570733577524-3a047079e80d?auto=format&fit=crop&w=700&q=80" alt="Véhicule premium"><div class="overlay">Gamme Premium</div></div></div>
+      <div class="col-6 col-lg-4 reveal" style="height:260px"><div class="gallery-item h-100"><img src="https://images.unsplash.com/photo-1611508106567-6218ae6c5f6a?auto=format&fit=crop&w=700&q=80" alt="Intérieur du véhicule"><div class="overlay">Confort intérieur</div></div></div>
+      <div class="col-6 col-lg-4 reveal" style="height:200px"><div class="gallery-item h-100"><img src="https://images.unsplash.com/photo-1677339059244-8c6cefec8415?auto=format&fit=crop&w=700&q=80" alt="Parc automobile de l'agence"><div class="overlay">Notre agence</div></div></div>
+      <div class="col-6 col-lg-4 reveal" style="height:200px"><div class="gallery-item h-100"><img src="https://images.unsplash.com/photo-1615887110697-0819ec23465f?auto=format&fit=crop&w=700&q=80" alt="Véhicule prêt pour la location"><div class="overlay">Véhicules disponibles</div></div></div>
+      <div class="col-6 col-lg-4 reveal" style="height:200px"><div class="gallery-item h-100"><img src="https://images.unsplash.com/photo-1593153121623-3180d7e37775?auto=format&fit=crop&w=700&q=80" alt="Conducteur au volant"><div class="overlay">Sur la route</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================== LOCALISATION ======== -->
+<section class="section-pad bg-grey-light">
+  <div class="container container-xl">
+    <div class="text-center mx-auto mb-5 reveal" style="max-width:640px">
+      <span class="eyebrow justify-content-center">Localisation</span>
+      <h2 class="section-title">Nous trouver</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-5 reveal">
+        <div class="contact-info-item"><div class="icon"><i class="bi bi-geo-alt-fill"></i></div><div><h6 class="mb-1">Adresse</h6><p class="mb-0" data-agency-address>[ADRESSE], Lomé, Togo</p></div></div>
+        <div class="contact-info-item"><div class="icon"><i class="bi bi-telephone-fill"></i></div><div><h6 class="mb-1">Téléphone</h6><p class="mb-0"><a href="#" data-agency-phone-href class="text-dark text-decoration-none" data-agency-phone>+228 XX XX XX XX</a></p></div></div>
+        <div class="contact-info-item"><div class="icon"><i class="bi bi-whatsapp"></i></div><div><h6 class="mb-1">WhatsApp</h6><p class="mb-0"><a href="#" data-whatsapp-default class="text-dark text-decoration-none">Discuter maintenant</a></p></div></div>
+        <div class="contact-info-item"><div class="icon"><i class="bi bi-envelope-fill"></i></div><div><h6 class="mb-1">Email</h6><p class="mb-0"><a href="#" data-agency-email-href class="text-dark text-decoration-none" data-agency-email>[EMAIL]</a></p></div></div>
+        <div class="contact-info-item"><div class="icon"><i class="bi bi-clock-fill"></i></div><div><h6 class="mb-1">Horaires</h6><ul class="list-unstyled mb-0 small" data-agency-hours style="max-width:280px"></ul></div></div>
+      </div>
+      <div class="col-lg-7 reveal">
+        <div class="map-wrap"><iframe data-maps-src src="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localisation de l'agence sur Google Maps"></iframe></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================== FAQ =================== -->
+<section class="section-pad" id="faq">
+  <div class="container container-xl">
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <div class="text-center mb-5 reveal">
+          <span class="eyebrow justify-content-center">Questions fréquentes</span>
+          <h2 class="section-title">Vous avez des questions ?</h2>
+        </div>
+        <div class="accordion reveal" id="faqAccordion">
+          <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Quels documents sont nécessaires pour louer une voiture ?</button></h2><div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Une pièce d'identité valide, un permis de conduire en cours de validité et, selon les cas, un justificatif de domicile.</div></div></div>
+          <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Quel est le prix d'une location ?</button></h2><div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Le tarif dépend du véhicule et de la durée choisis. Consultez la page « Nos véhicules » ou contactez-nous sur WhatsApp pour un devis précis.</div></div></div>
+          <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Peut-on louer une voiture avec chauffeur ?</button></h2><div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Oui, nous proposons la location avec chauffeur pour vos déplacements professionnels, événements et transferts.</div></div></div>
+          <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">Peut-on récupérer le véhicule à l'aéroport ?</button></h2><div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Oui, la prise en charge à l'Aéroport de Lomé est disponible. Précisez-le lors de votre réservation.</div></div></div>
+          <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">Quelle est la durée minimale de location ?</button></h2><div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">La location est possible à partir d'une journée complète.</div></div></div>
+          <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">Quels moyens de paiement acceptez-vous ?</button></h2><div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Espèces, mobile money et virement bancaire. Contactez-nous pour connaître les modalités précises.</div></div></div>
+          <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">Peut-on prolonger la durée de location ?</button></h2><div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Oui, sous réserve de disponibilité du véhicule. Contactez-nous avant la date de restitution prévue.</div></div></div>
+          <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">Quelle est votre politique concernant le carburant ?</button></h2><div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Le véhicule est remis avec un niveau de carburant donné et doit être restitué au même niveau.</div></div></div>
+          <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9">Que se passe-t-il en cas de panne ?</button></h2><div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Notre assistance est disponible 24/7. Contactez-nous immédiatement au numéro fourni lors de la réservation.</div></div></div>
+          <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10">Est-il possible de sortir de Lomé avec le véhicule ?</button></h2><div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Oui, les déplacements dans les autres régions du Togo sont possibles. Merci de nous en informer à l'avance.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container container-xl">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="brand"><span class="brand-mark"><i class="bi bi-car-front-fill"></i></span><span data-agency-name>[NOM DE L'AGENCE]</span></div>
+        <p class="mb-3" data-agency-slogan>Votre mobilité, notre priorité.</p>
+        <div class="footer-social">
+          <a href="#" data-social-facebook aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" data-social-instagram aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" data-social-tiktok aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+          <a href="#" data-whatsapp-default aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>Navigation</h6>
+        <ul class="list-unstyled d-flex flex-column gap-2 small">
+          <li><a href="index.html#accueil">Accueil</a></li>
+          <li><a href="vehicules.html">Véhicules</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#tarifs">Tarifs</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-3">
+        <h6>Services</h6>
+        <ul class="list-unstyled d-flex flex-column gap-2 small">
+          <li>Location de voitures</li>
+          <li>Location avec chauffeur</li>
+          <li>Transfert aéroport</li>
+          <li>Location longue durée</li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <h6>Contact</h6>
+        <ul class="list-unstyled d-flex flex-column gap-2 small">
+          <li><i class="bi bi-telephone-fill me-2"></i><span data-agency-phone>+228 XX XX XX XX</span></li>
+          <li><i class="bi bi-whatsapp me-2"></i><a href="#" data-whatsapp-default>Écrire sur WhatsApp</a></li>
+          <li><i class="bi bi-envelope-fill me-2"></i><span data-agency-email>[EMAIL]</span></li>
+          <li><i class="bi bi-geo-alt-fill me-2"></i>Lomé, Togo</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom text-center text-sm-start d-flex flex-column flex-sm-row justify-content-between gap-2">
+      <span>© <span id="footerYear">2026</span> <span data-agency-name>[NOM DE L'AGENCE]</span>. Tous droits réservés.</span>
+      <span>Conçu avec soin à Lomé, Togo 🇹🇬</span>
+    </div>
+  </div>
+</footer>
+
+<a href="#" data-whatsapp-default class="whatsapp-float" aria-label="Contacter sur WhatsApp"><i class="bi bi-whatsapp"></i></a>
+
+<div class="lightbox-overlay" id="lightboxOverlay">
+  <span class="lightbox-close" id="lightboxClose"><i class="bi bi-x-lg"></i></span>
+  <img src="" alt="" id="lightboxImage">
+</div>
+
+<!-- ============================================================ MODAL DÉTAILS VÉHICULE -->
+<div class="modal fade modal-vehicle" id="vehicleModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <div class="text-gold small fw-bold text-uppercase" id="vmCategory"></div>
+          <h5 class="modal-title mb-0" id="vmName"></h5>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+      </div>
+      <div class="modal-body">
+        <div class="vd-gallery-main"><img id="vmMainImg" src="" alt="Véhicule"></div>
+        <div class="vd-thumbs" id="vmThumbs"></div>
+        <div class="vd-info">
+          <p id="vmDesc" class="mb-3"></p>
+          <div class="vd-spec-grid">
+            <div class="vd-spec-item"><i class="bi bi-person-fill"></i><span id="vmSeats"></span></div>
+            <div class="vd-spec-item"><i class="bi bi-gear-fill"></i><span id="vmTransmission"></span></div>
+            <div class="vd-spec-item"><i class="bi bi-fuel-pump-fill"></i><span id="vmFuel"></span></div>
+            <div class="vd-spec-item"><i class="bi bi-snow"></i><span id="vmAC"></span></div>
+            <div class="vd-spec-item"><i class="bi bi-briefcase-fill"></i><span id="vmLuggage"></span></div>
+            <div class="vd-spec-item"><i class="bi bi-calendar3"></i><span id="vmYear"></span></div>
+          </div>
+          <div class="vd-price-box d-flex justify-content-between flex-wrap gap-2">
+            <div><div class="small text-secondary">Prix / jour</div><div class="fw-bold fs-5" id="vmPriceDay"></div></div>
+            <div><div class="small text-secondary">Prix / semaine</div><div class="fw-bold fs-5" id="vmPriceWeek"></div></div>
+          </div>
+          <p class="small mb-0"><strong>Conditions particulières :</strong> <span id="vmConditions"></span></p>
+        </div>
+      </div>
+      <div class="vd-sticky-cta">
+        <a href="#" id="vmReserveBtn" class="btn-gold flex-fill text-center">Réserver ce véhicule</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/vehicles.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const popular = VEHICLES.filter(v => v.popular).slice(0,3);
+    const list = popular.length >= 3 ? popular : VEHICLES.slice(0,3);
+    renderVehicles("vehiclesPreview", list);
+  });
+</script>
+</body>
+</html>
